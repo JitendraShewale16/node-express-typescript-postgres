@@ -10,6 +10,7 @@ import DBSchema from './db_pool/schema'
 import { notFoundHandler } from './helpers'
 import { logger, initRequest, logResponse } from './providers/logger'
 import SwaggerInit from './swagger/init' // Update impact_api.yaml
+import * as Auth from './middlewares/auth'
 
 const app = express()
 const http = require('http')
@@ -24,6 +25,7 @@ async function main() {
   app.use(express.urlencoded({ extended: true }))
   app.use(express.json({ limit: '1.5MB' }))
   app.use(CORS.handle)
+  app.use(Auth.authorize(['']))
 
   // set dbpool
   const pool = new PGPool(config.dbObj)
@@ -42,6 +44,10 @@ async function main() {
   // set versions
   app.use('/v1', routes)
   app.use('*', notFoundHandler)
+
+  app.get('/getToken1', function (_req, res) {
+    res.send('hello')
+  })
 
   // create server
   const server = http.createServer(app)
