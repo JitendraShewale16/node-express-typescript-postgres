@@ -1,6 +1,6 @@
 swagger: "2.0"
 info:
-  description: "APIs Documetation"
+  description: "APIs Documentation"
   version: "1.0.0"
   title: "Swagger APIs"
 host: "localhost:5000"
@@ -26,7 +26,12 @@ paths:
         - "application/json"
       produces:
         - "application/json"
-      parameters: []
+      parameters:
+        - name: "Authorization"
+          in: "header"
+          type: "string"
+          description: "auth token"
+          required: true
       responses:
         200:
           description: "successful operation"
@@ -44,6 +49,11 @@ paths:
       produces:
         - "application/json"
       parameters:
+        - name: "Authorization"
+          in: "header"
+          type: "string"
+          description: "auth token"
+          required: true
         - in: "body"
           name: "body"
           description: "Employee object that needs to be added to the database"
@@ -160,6 +170,11 @@ paths:
       produces:
         - "application/json"
       parameters:
+        - name: "Authorization"
+          in: "header"
+          type: "string"
+          description: "auth token"
+          required: true
         - in: "body"
           name: "body"
           description: "Employee object that needs to be updating to the database"
@@ -229,6 +244,11 @@ paths:
       produces:
         - "application/json"
       parameters:
+        - name: "Authorization"
+          in: "header"
+          type: "string"
+          description: "auth token"
+          required: true
         - name: "employeeId"
           in: "path"
           description: "Returns a single employee details"
@@ -253,6 +273,11 @@ paths:
       produces:
         - "application/json"
       parameters:
+        - name: "Authorization"
+          in: "header"
+          type: "string"
+          description: "auth token"
+          required: true
         - name: "employeeId"
           in: "path"
           description: "delete the employee details"
@@ -275,7 +300,12 @@ paths:
         - "application/json"
       produces:
         - "application/json"
-      parameters: []
+      parameters:
+        - name: "Authorization"
+          in: "header"
+          type: "string"
+          description: "auth token"
+          required: true
       responses:
         200:
           description: "successful operation"
@@ -293,6 +323,11 @@ paths:
       produces:
         - "application/json"
       parameters:
+        - name: "Authorization"
+          in: "header"
+          type: "string"
+          description: "auth token"
+          required: true
         - in: "body"
           name: "body"
           description: ""
@@ -322,6 +357,11 @@ paths:
       produces:
         - "application/json"
       parameters:
+        - name: "Authorization"
+          in: "header"
+          type: "string"
+          description: "auth token"
+          required: true
         - name: "deptId"
           in: "path"
           description: "delete the department details"
@@ -344,7 +384,12 @@ paths:
         - "application/json"
       produces:
         - "application/json"
-      parameters: []
+      parameters:
+        - name: "Authorization"
+          in: "header"
+          type: "string"
+          description: "auth token"
+          required: true
       responses:
         200:
           description: "successful operation"
@@ -362,6 +407,11 @@ paths:
       produces:
         - "application/json"
       parameters:
+        - name: "Authorization"
+          in: "header"
+          type: "string"
+          description: "auth token"
+          required: true
         - in: "body"
           name: "body"
           description: "project object that needs to be added to the database"
@@ -406,6 +456,11 @@ paths:
       produces:
         - "application/json"
       parameters:
+        - name: "Authorization"
+          in: "header"
+          type: "string"
+          description: "auth token"
+          required: true
         - in: "body"
           name: "body"
           description: "project object that needs to be update to the database"
@@ -451,6 +506,11 @@ paths:
       produces:
         - "application/json"
       parameters:
+        - name: "Authorization"
+          in: "header"
+          type: "string"
+          description: "auth token"
+          required: true
         - name: "projectId"
           in: "path"
           description: "delete the project details"

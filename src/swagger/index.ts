@@ -2,7 +2,7 @@ export default {
   definition: {
     swagger: '2.0',
     info: {
-      description: 'APIs Documetation',
+      description: 'APIs Documentation',
       version: '1.0.0',
       title: 'Swagger APIs',
     },
@@ -29,12 +29,14 @@ export default {
           operationId: 'get',
           consumes: ['application/json'],
           produces: ['application/json'],
-          parameters: [],
+          parameters: [
+            { name: 'Authorization', in: 'header', type: 'string', description: 'auth token', required: true },
+          ],
           responses: {
             '200': { description: 'successful operation' },
             '400': { description: 'Bad Request' },
           },
-          //security: [{ api_key: [] }],
+          // security: [{ api_key: [] }],
         },
       },
       '/employee/add': {
@@ -46,6 +48,7 @@ export default {
           consumes: ['application/json'],
           produces: ['application/json'],
           parameters: [
+            { name: 'Authorization', in: 'header', type: 'string', description: 'auth token', required: true },
             {
               in: 'body',
               name: 'body',
@@ -67,6 +70,7 @@ export default {
           consumes: ['application/json'],
           produces: ['application/json'],
           parameters: [
+            { name: 'Authorization', in: 'header', type: 'string', description: 'auth token', required: true },
             {
               in: 'body',
               name: 'body',
@@ -90,6 +94,7 @@ export default {
           consumes: ['application/json'],
           produces: ['application/json'],
           parameters: [
+            { name: 'Authorization', in: 'header', type: 'string', description: 'auth token', required: true },
             {
               name: 'employeeId',
               in: 'path',
@@ -113,6 +118,7 @@ export default {
           consumes: ['application/json'],
           produces: ['application/json'],
           parameters: [
+            { name: 'Authorization', in: 'header', type: 'string', description: 'auth token', required: true },
             {
               name: 'employeeId',
               in: 'path',
@@ -136,7 +142,9 @@ export default {
           operationId: 'deptget',
           consumes: ['application/json'],
           produces: ['application/json'],
-          parameters: [],
+          parameters: [
+            { name: 'Authorization', in: 'header', type: 'string', description: 'auth token', required: true },
+          ],
           responses: {
             '200': { description: 'successful operation' },
             '400': { description: 'Bad Request' },
@@ -152,6 +160,7 @@ export default {
           consumes: ['application/json'],
           produces: ['application/json'],
           parameters: [
+            { name: 'Authorization', in: 'header', type: 'string', description: 'auth token', required: true },
             {
               in: 'body',
               name: 'body',
@@ -175,6 +184,7 @@ export default {
           consumes: ['application/json'],
           produces: ['application/json'],
           parameters: [
+            { name: 'Authorization', in: 'header', type: 'string', description: 'auth token', required: true },
             {
               name: 'deptId',
               in: 'path',
@@ -198,7 +208,9 @@ export default {
           operationId: 'projectGet',
           consumes: ['application/json'],
           produces: ['application/json'],
-          parameters: [],
+          parameters: [
+            { name: 'Authorization', in: 'header', type: 'string', description: 'auth token', required: true },
+          ],
           responses: {
             '200': { description: 'successful operation' },
             '400': { description: 'Bad Request' },
@@ -214,6 +226,7 @@ export default {
           consumes: ['application/json'],
           produces: ['application/json'],
           parameters: [
+            { name: 'Authorization', in: 'header', type: 'string', description: 'auth token', required: true },
             {
               in: 'body',
               name: 'body',
@@ -235,6 +248,7 @@ export default {
           consumes: ['application/json'],
           produces: ['application/json'],
           parameters: [
+            { name: 'Authorization', in: 'header', type: 'string', description: 'auth token', required: true },
             {
               in: 'body',
               name: 'body',
@@ -258,6 +272,7 @@ export default {
           consumes: ['application/json'],
           produces: ['application/json'],
           parameters: [
+            { name: 'Authorization', in: 'header', type: 'string', description: 'auth token', required: true },
             {
               name: 'projectId',
               in: 'path',
@@ -275,7 +290,7 @@ export default {
       },
     },
     // securityDefinitions: {
-    //   api_key: { type: 'apiKey', name: 'api_key', in: 'header' },
+    //   authorization: { type: 'apiKey', name: 'authorization', in: 'header' },
     // },
     definitions: {
       ApiResponse: {

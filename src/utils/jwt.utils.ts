@@ -10,7 +10,7 @@ export function generateToken() {
   const payload = {
     name: 'admin',
     userId: 1001,
-    accessTypes: [''],
+    accessTypes: ['/'],
   }
   // read private key value
   const privateKey = {

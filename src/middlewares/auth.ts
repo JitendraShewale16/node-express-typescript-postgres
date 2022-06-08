@@ -10,7 +10,6 @@ export const authorize = (allowedAccessTypes: string[]) => async (req: Request, 
   try {
     let jwt = req.headers.authorization
 
-    // verify request has token
     if (!jwt) {
       return res.status(401).json({ message: 'Invalid token' })
     }
